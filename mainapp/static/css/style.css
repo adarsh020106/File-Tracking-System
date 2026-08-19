@@ -1,0 +1,706 @@
+/* index.html */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(rgba(27, 105, 27, 0.401),rgba(56, 81, 56, 0.394)) ,url("../img/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #0b3d22; Dark green background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main Card Container */
+.portal-container {
+  display: flex;
+  width: 1000px;
+  border-radius: 25px;
+  max-width: 100%;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+/* Left Side (Green Box) */
+.sidebar {
+  flex: 1.1;
+  box-shadow: #2b2b2b;
+  padding: 50px;
+  color: #ffffff;
+  border-radius: 25px 0px 0px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Top right rounded overlay graphic effect */
+.sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+}
+
+.logo-box {
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo-box i {
+  color: #139c49;
+  font-size: 50px;
+}
+
+.sidebar h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.sidebar p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 0.85rem;
+}
+
+/* Right Side (Portal Options) */
+.portal-section {
+  flex: 0.9;
+  padding: 50px;
+  background-color:transparent;
+  color: white;
+  display: flex;
+  border-radius: 0px 25px 25px 0px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.company-badge {
+  background-color: rgba(19, 156, 73, 0.1);
+  color: #139c49;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  width: max-content;
+  margin-bottom: 20px;
+}
+
+.portal-section h2 {
+  font-size: 2.1rem;
+ 
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+
+  margin-bottom: 35px;
+}
+
+/* Selection Cards */
+.login-card {
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-3px);
+  border-color: #139c49;
+  box-shadow: 0 10px 20px rgba(19, 156, 73, 0.08);
+}
+
+.card-icon-container {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(19, 156, 73, 0.08);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.card-icon-container i {
+  color: #139c49;
+  font-size: 1.2rem;
+}
+
+.card-content h3 {
+  font-size: 1.15rem;
+  color: #2b2b2b;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-content p {
+  font-size: 0.85rem;
+  color: #777777;
+  line-height: 1.4;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .portal-container {
+    flex-direction: column;
+  }
+  .sidebar{
+    padding: 35px;
+    border-radius: 25px 25px 0px 0px;
+  }
+  
+  .portal-section {
+    padding: 35px;
+    border-radius: 0px 0px 25px 25px;
+  }
+  .sidebar::before {
+    display: none;
+  }
+}
+
+/* userlogin.html */
+
+.userbody {
+  background-image: url("../img/userbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Dark green outer background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main Container */
+.login-container {
+  display: flex;
+  width: 100vh;
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Sidebar (Green Section) */
+.sidebar1 {
+  flex: 1.1;
+
+  padding: 50px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Decorative diagonal shape inside sidebar */
+.sidebar1::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transform: skewX(-15deg);
+  z-index: 1;
+}
+
+.logo-box1 {
+   background-color: #f8f9fa;
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Green Leaf Icon Placeholder */
+.logo-box1 i {
+  color: #139c49;
+  font-size: 45px;
+}
+
+.sidebar1 h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.sidebar1 p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* Feature List */
+.features-list1 {
+  list-style: none;
+}
+
+.feature-item1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.feature-icon1 {
+  width: 35px;
+  height: 35px;
+  
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Right Side (Form Section) */
+.form-section1 {
+  color:white;
+  flex: 0.9;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+.company-name1 {
+  color: #139c49;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.form-section1 h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.subtitle1 {
+  font-size: 0.85rem;
+  margin-bottom: 35px;
+}
+
+/* Form Controls */
+.form-group1 {
+  margin-bottom: 25px;
+}
+
+.form-group1 label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.input-container1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-container1 i {
+  position: absolute;
+  left: 15px;
+  font-size: 0.95rem;
+}
+
+.input-container1 input {
+  width: 100%;
+  padding: 14px 14px 14px 45px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+.input-container1 input:focus {
+  border-color: #139c49;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(19, 156, 73, 0.1);
+}
+
+/* Utilities Row (Remember me & Forgot password) */
+.form-utils1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 30px;
+}
+
+.remember-me1 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remember-me1 input {
+  margin-right: 8px;
+  accent-color: #139c49;
+}
+
+.forgot-pass1 {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-pass1:hover {
+  color: #139c49;
+  text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn1 {
+  width: 100%;
+  padding: 14px;
+  background-color: #139c49;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.login-btn1:hover {
+  background-color: #0d7a37;
+}
+
+/* Back to Portal Link */
+.back-link1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  width: max-content;
+}
+
+.back-link1:hover {
+  color: #139c49;
+}
+
+/* Responsive Design (Mobile/Tablet ke liye) */
+@media (max-width: 768px) {
+  .login-container1 {
+    flex-direction: column;
+  }
+  .sidebar1 {
+    padding: 35px;
+  }
+  .sidebar1::after {
+    display: none;
+  }
+  .form-section1 {
+    padding: 35px;
+  }
+}
+
+/* adminlogin.html */
+
+.adminbody {
+  background-image: url("../img/adminbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Main dynamic blue background layer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image jaisa glass/office layout background reflection effect banane ke liye */
+.adminbody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 40px 40px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+
+
+.adminbody::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+/* Container Blueprint */
+.login-container2 {
+  display: flex;
+  width: 1000px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  z-index: 2; /* Content background effects ke upar rahega */
+}
+
+/* Left Sidebar (Blue Section) */
+.sidebar2 {
+  flex: 1.1;
+  padding: 50px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-box2 {
+  background-color: #ffffff;
+  width: 110px;
+  height: 75px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Leaf icon placeholder */
+.logo-box2 i {
+  color: #139c49;
+  font-size: 42px;
+}
+
+.sidebar2 h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.sidebar2 p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Right Form Section */
+.form-section2 {
+  flex: 0.9;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+.admin-tag2 {
+  color:white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.form-section2 h2 {
+  font-size: 2.2rem;
+  color:white;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.subtitle2 {
+  font-size: 0.85rem;
+  color:white;
+  margin-bottom: 35px;
+}
+
+/* Form Fields */
+.form-group2 {
+  margin-bottom: 25px;
+}
+
+.form-group2 label {
+  display: block;
+  font-size: 0.9rem;
+color: #eaeaea;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-container2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-container2 i {
+  position: absolute;
+  left: 15px;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.input-container2 input {
+  width: 100%;
+  padding: 14px 14px 14px 45px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  
+}
+
+.input-container2 input:focus {
+  border-color: #0b56d7;
+  box-shadow: 0 0 0 4px rgba(11, 86, 215, 0.15);
+}
+
+/* Admin Action Buttons */
+.login-btn2 {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #0b56d7, #073da1);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(11, 86, 215, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.login-btn2:hover {
+  opacity: 0.95;
+  box-shadow: 0 6px 16px rgba(11, 86, 215, 0.4);
+}
+
+/* Back to Portal */
+.back-link2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: max-content;
+  transition: color 0.2s ease;
+}
+
+.back-link2:hover {
+  color: #0b56d7;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .login-container2 {
+    flex-direction: column;
+  }
+  .sidebar2,
+  .form-section {
+    padding: 35px;
+  }
+}

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
+<body class="adminbody">
+    <div class="login-container2">
+        <!-- Left Sidebar Section -->
+        <div class="sidebar2">
+            <div class="logo-box2">
+                <!-- Green Leaf Icon Placeholder -->
+                <img src="{% static 'img/image.png' %}" height="70px" />
+            </div>
+            <h1>Admin Login</h1>
+            <p>Admin can manage employees, departments, file records, tracking and movement workflow.</p>
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="form-section2">
+            <span class="admin-tag2">Administrator Area</span>
+            <h2>Welcome Admin</h2>
+            <p class="subtitle2">Enter admin credentials to access dashboard</p>
+            {% if messages %}
+            {% for m in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{m}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+            {% endfor %}
+            {% endif %} 
+            <form method="post">
+            
+                {% csrf_token %}
+                <!-- Admin Username Field -->
+                <div class="form-group2">
+                    <label for="admin-user2 fs-4 ">Admin Username / Email</label>
+                    <div class="input-container2">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <input type="text" name="username" id="admin-user2" placeholder="Enter admin username" required>
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group2">
+                    <label for="admin-pass2">Password</label>
+                    <div class="input-container2">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" id="admin-pass2" placeholder="Enter password" required>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn2">
+                    <i class="fa-solid fa-right-to-bracket"></i> Admin Login
+                </button>
+
+                <!-- Back Link -->
+                <a href="{% url 'index' %}" class="back-link2 rounded-pill text-light">
+                    <i class="fa-solid fa-chevron-left"></i> Back to Portal
+                </a>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

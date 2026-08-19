@@ -1,0 +1,33 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<h1>View Employee</h1>
+<div class="row">
+    <div class="col-sm-12 col-md-10 p-2 view">
+        <table class="table">
+            <tr class="bg-success">
+                <th>Employee</th>
+                <th>Name</th>
+                <th>Contact No</th>
+                <th>Email</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+            {% for e in emp1 %}
+            <tr>
+                <td>{{e.empid}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.contactno}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.designation}}</td>
+                <td>{{e.department.dept_name}}</td>
+                <td>
+          <a href="{% url 'delemp' did=e.id %}" class="btn btn-danger"><i class="ti ti-trash" ></i></a>
+        </td>
+            </tr>
+            {%  endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

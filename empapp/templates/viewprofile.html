@@ -1,0 +1,35 @@
+{% extends 'empbase.html' %} {% load static %} {% block employee %}
+<h1>Your Profile</h1>
+<div class="row mt-5">
+  <div class="card p-4 shadow bg-success text-dark " style="border-radius: 5%;" >
+    <div class="text-center">
+      {% if emp.picture %}
+      <img
+        src="{{emp.picture.url}}"
+        alt="picture"
+        height="150px"
+        class="rounded-3"
+      />
+      {% else %}
+      <img
+        src="{% static 'admin/assets/images/user/avatar-2.jpg' %}"
+        alt="picture"
+        height="150px"
+        class="rounded-3"
+      />
+      {% endif %}
+    </div>
+    <hr />
+    <h5 class="text-center">Dtails</h5>
+    <p>Name - <b>{{ emp.name }}</b></p>
+    <p>Email - <b>{{ emp.email }}</b></p>
+    <p>Contact no.- <b>{{emp.contactno}}</b></p>
+    <p>Designation- <b>{{emp.designation }}</b></p>
+    <p>Department- <b>{{emp.department.dept_name }}</b></p>
+    <p>address- <b>{{emp.address }}</b></p>
+    <div class="text-center">
+      <a href="" class="btn btn-info text-dark ">Update Profile</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

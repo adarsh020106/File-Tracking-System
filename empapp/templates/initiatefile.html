@@ -1,0 +1,41 @@
+{% extends 'empbase.html' %} {% load static %} {% block employee %}
+<h1>initiatefile</h1>
+<div class="row">
+  <div class="col-sm-10 mx-auto">
+    <div class="card p-4 bg-success shadow">
+      <form class="row" method="post" enctype="multipart/form-data" g-4>
+        {% csrf_token %}
+        <div class="col-sm-12">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" name="title" />
+        </div>
+        <div class="col-sm-12">
+          <label for="sub" class="form-label">Subject</label>
+          <input type="text" class="form-control" name="subject" id="esub" />
+        </div>
+        <div class="col-sm-12 mt-3">
+          <label for="pic" class="form-label">file Attachment</label>
+          <input type="file" name="file_attachment" class="form-control" id="pic" />
+          <div class="col-sm-12">
+            <label for="emp" class="form-label">Select Employee</label>
+            <select name="emp_id" id="emp">
+              <option  value="" selected disabled>Select Employee</option>
+              {% for emp in employees %}
+              <option value="{{emp.email}}">
+             {{emp.name}} {{emp.department.dept_name}}--{{emp.email}}
+              </option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-12 mt-3">
+          <button type="submit" class="btn btn-info w-100">
+            Initiate File
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

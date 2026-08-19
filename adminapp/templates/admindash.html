@@ -1,0 +1,57 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+
+{% block admin %}
+<style>
+    .icon{
+        height: 50px;
+        width: 50px;
+        background-color: #163da1;
+        border-radius: 100%;
+    }
+    .icon i{
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 12px;
+        color: white;
+    }
+</style>
+<div class="container-fluid">
+    <div class="col-sm-12">
+        <div class="card p-4  " style="background-color: #163da1; color:white; border-radius:20px ;">
+            <h2 class="text-light">Welcome Admin,GGL Head Office</h2>
+            <p>Manage complete file movement system from this dashboard.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+             <div class="card p-3 shadow-lg" style="border-radius: 30px;">
+                <div class="icon"><i class="fa-regular fa-folder"></i></div>
+                <h2 class="fw-bold mt-3 ms3">{{file_count}}</2>
+                <p class="fw-bold mt-3 ms3">Total Files</p>
+            </div>
+        </div>
+         <div class="col-sm-6 col-md-3">
+             <div class="card p-3 shadow-lg" style="border-radius: 30px;">
+                <div class="icon"><i class="fa-regular fa-folder"></i></div>
+                <h2 class="fw-bold mt-3 ms3">{{file_count}}</2>
+                <p class="fw-bold mt-3 ms3">Pending Files</p>
+            </div>
+        </div>
+         <div class="col-sm-6 col-md-3">
+             <div class="card p-3 shadow-lg" style="border-radius: 30px;">
+                <div class="icon"><i class="fa-regular fa-folder"></i></div>
+                <h2 class="fw-bold mt-3 ms3">{{total_emp}}</2>
+                <p class="fw-bold mt-3 ms3">Total Employees</p>
+            </div>
+        </div>
+         <div class="col-sm-6 col-md-3">
+             <div class="card p-3 shadow-lg" style="border-radius: 30px;">
+                <div class="icon"><i class="fa-regular fa-folder"></i></div>
+                <h2 class="fw-bold mt-3 ms3">{{total_dpt}}</2>
+                <p class="fw-bold mt-3 ms3">Total Departments</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

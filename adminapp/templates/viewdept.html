@@ -1,0 +1,23 @@
+{% extends 'adminbase.html' %} {% load static %} {% block admin %}
+<h1>View Department</h1>
+<div class="row">  
+  <div class="col-sm-8 mx-auto">
+    <table class="table bg-success table-striped">
+      <tr>
+        <th>S no.</th>
+        <th>Department Name</th>
+        <th>Action</th>
+      </tr>
+      {% for d in depts %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ d.dept_name }}</td>
+        <td>
+          <a href="{% url 'deldept' did=d.id %}" class="btn btn-danger"><i class="ti ti-trash" ></i></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}
